@@ -23,8 +23,33 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         // This is the default implementation.  If you want different objects to handle different intents,
         // you can override this and return the handler you want for that particular intent.
         
-        return self
+//        if intent is INSendMessageIntent ||
+//            intent is INSearchForMessagesIntent ||
+//            intent is INSetMessageAttributeIntent {
+//            handler =
+//            handler = MyMessageHandler()
+//        }
+        
+        var handler = nil
+        
+        if intent is INSendMessageIntent ||
+            intent is INSearchForMessagesIntent ||
+            intent is INSetMessageAttributeIntent {
+//            handler = MyMessageHandler()
+        }
+        else if intent is INStartAudioCallIntent {
+//            handler = MyAudioCallHandler()
+        }
+        else if intent is INStartVideoCallIntent {
+//            handler = MyVideoCallHandler()
+        }
+        
+        return handler
+        
+//        return self
     }
+    
+    
     
     // MARK: - INSendMessageIntentHandling
     

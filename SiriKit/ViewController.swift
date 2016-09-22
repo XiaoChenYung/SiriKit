@@ -15,6 +15,13 @@ class ViewController: UIViewController {
         INPreferences.requestSiriAuthorization { (_) in
             
         }
+        
+        let work = NSOrderedSet(array: ["恭王府"])
+        let vocabulary = INVocabulary.shared()
+        vocabulary.setVocabularyStrings(work, of: .workoutActivityName)
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
